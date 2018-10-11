@@ -55,7 +55,9 @@
     button_makeStory.disabled = !l || l > 60
   })
   
-  button_makeStory.addEventListener('click', function (e) {})
+  button_makeStory.addEventListener('click', function (e) {
+    fetch('/predict')
+  })
 </script>
 
 </html>
