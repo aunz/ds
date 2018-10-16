@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 from flask import Flask, request, render_template, jsonify
+import numpy as np
 from keras.models import load_model
 
 
@@ -10,7 +11,7 @@ max_len = 60
 chars = ['\n',  ' ',  '!',  '"',  "'",  '(',  ')',  ',',  '-',  '.',  ':',  ';',  '?',  'A',  'B',  'C',  'D',  'E',  'F',  'G',  'H',  'I',  'J',  'K',  'L',  'M',  'N',  'O',  'P',  'Q',  'R',  'S',  'T',  'U',  'V',  'W',  'Y',  'Z',  'a',  'b',  'c',  'd',  'e',  'f',  'g',  'h',  'i',  'j',  'k',  'l',  'm',  'n',  'o',  'p',  'q',  'r',  's',  't',  'u',  'v',  'w',  'x',  'y',  'z']
 char_indices = dict((char, chars.index(char)) for char in chars) 
 
-def sample(preds, temperature=0.5):
+def sample(preds, temperature = 0.5):
     ''' function to sample the next char given the model's prediction
     Because given the same input, the predicted output will always be the same.
     This function take an array of preds (sum to 1), and a temperature param, return a new array of preds, then randomly select 1 element
@@ -25,7 +26,7 @@ def sample(preds, temperature=0.5):
     probas = np.random.multinomial(1, preds, 1)
     return np.argmax(probas)
 
-def predict(text_seed, n_char=420, temperature=0.5):
+def predict(text_seed, n_char = 420, temperature = 0.5):
     # given the seed_text, predict up to the next n_char
     # generated_text = f'{text_seed:>max_len}'[:max_len] # pad string to the right and only take up to max_len
     generated_text = text_seed.rjust(max_len)[:max_len]
