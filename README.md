@@ -1,6 +1,6 @@
 # ds
 
-A series of tutorial, code, blurbs related to data sciences
+A series of tutorials, codes, blurbs related to data sciences
 
 - [KNN](./KNN.ipynb)
 - [PCA](./pca.ipynb), principal component analysis
