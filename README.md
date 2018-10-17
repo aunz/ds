@@ -2,6 +2,7 @@
 
 A series of tutorial, code, blurbs related to data sciences
 
+- [KNN](./KNN.ipynb)
 - [PCA](./pca.ipynb), principle component analysis
 - [Gradient descent](./Gradient_descent.ipynb)
 
