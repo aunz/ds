@@ -5,6 +5,7 @@ A series of tutorials, codes, blurbs related to data sciences
 - [KNN](./KNN.ipynb)
 - [PCA](./pca.ipynb), principal component analysis
 - [Gradient descent](./Gradient_descent.ipynb)
+- [Modelling variable intereaction](./Modeling_interaction.ipynb)
 
 ## Projects
 - [House price prediction](./House_price_prediction.ipynb)
