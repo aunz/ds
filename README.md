@@ -12,3 +12,4 @@ A series of tutorials, codes, blurbs related to data sciences
 - [House price prediction](./House_price_prediction.ipynb)
 - [Google Store customer revenue prediction](./GA_customer_revenue.ipynb) (work in progress)
 - [Aesop's fables](https://github.com/aunz/ds/tree/master/apps/aesop_fables), generated using RNN
+- [Customer segmentation](./Customer_segmentation.ipynb)
