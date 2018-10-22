@@ -29,6 +29,15 @@
       opacity: 0.25
     }
     
+    .button2 {
+      background: none;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      color: #0074D9;
+      font-weight: bold;
+    }
+    
     @keyframes spinner { to { transform: rotate(360deg) } }
     .spinner:before {
       content: '';
@@ -51,6 +60,7 @@
   Enter some text here; use a-z, A-Z, comma, full stop, question mark; max 60 characters including space
   <br>
   <input id="input" style="margin: 1rem 0; padding: 0.5rem; font-size:1.5rem" size="60" placeholder="Try: 'The Hare and the Tortoise'">
+  <button id="randomText" class="button2">Random text</button>
   <span id="charCount" style="display: block; color: #999; margin-top: -0.75rem">Count: 0</span>
   <button id="makeStory" class="button">Make a story</button>
   <span id="spinner" style="opacity:0">May take up to 30 seconds <span class="spinner"></span></span>  
@@ -70,6 +80,7 @@
   const output = document.getElementById('output')
   const charCount = document.getElementById('charCount')
   const button_makeStory = document.getElementById('makeStory')
+  const button_randomText = document.getElementById('randomText')
   const spinner = document.getElementById('spinner')
   button_makeStory.disabled = true
 
@@ -79,7 +90,19 @@
     button_makeStory.disabled = !l || l > 60
   })
   
-  
+  button_randomText.addEventListener('click', function () {
+    const suggestions = [
+      'The Wolf and the Lamb',
+      'The Lion and the Mouse',
+      'The Hare and the Tortoise',
+      'The Ants and the Grasshopper',
+      'The Farmer and the Stork',
+      'The Bear and the Fox',
+    ]
+    const index = ~~(Math.random() * suggestions.length)
+    input.value = suggestions[index]
+    button_makeStory.disabled = false
+  })
   button_makeStory.addEventListener('click', function (e) {
     const data = input.value.trim()
     console.log('sending', data)
