@@ -45,5 +45,36 @@ a = 1
 Python is white space sensitive
 ```Python
 a = 1
- b = 2
+ b = 2 # IndentationError: unexpected indent
+```
+
+### Reference
+
+R copies by value
+```R
+a = c(1, 2, 3)
+b = a
+b[1] = 2
+a # c(1, 2, 3)
+```
+
+Python copies by reference for array, object
+```Python
+a = [1, 2, 3]
+b = a # copy a
+b[0] = 2 # change b[0]
+a # [2, 2, 2], a is changed
+
+a = { 'k': 1 }
+b = a
+b['k'] = 2
+b['l'] = 3
+a # { 'k': 2, 'l': 3 }
+
+# but not primitives like num or string
+a = 1
+b = a # copy a
+b = 2 # change b
+a # 1, a is still 1
+
 ```
