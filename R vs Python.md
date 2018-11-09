@@ -76,5 +76,15 @@ a = 1
 b = a # copy a
 b = 2 # change b
 a # 1, a is still 1
+```
 
+### Data type
+R
+```R
+typeof(1) # 
+
+```
+Python
+```Python
+type(1)
 ```
