@@ -123,8 +123,63 @@ R and Python both have primitive types such as integer, double in R (float in Py
 
 NULL in R, None in Python
 
-Arrays in R can be initiallised by `c()` but can only contain the same data type. So `c(1, 'a')` will result in `c('1', 'a')` In Python, arrays are created by `[]` and each element can be of any type.
+In R, a sequence of cells such as `c(1, 2, 3)` or `list(1, 2, 3)` is a vector. While `c(1, 2, 3)` can only contain the same data type, `list(1, 2, 3)` can contain mixed types. Arrays in R contain 2 or more dimensions and are created by `array()` or `matrix()`. In Python, arrays are created by `[]` and each element can be of any type.
 
 Python also has tuple, set, dict. Dict can be emulated in R with `list()` such as `l = list(number = 1, char = 'a')`, elements can be accessed by `$` or `[[]]` such as `l$number` or `l[['number']]`. In Python, values in a dictionary such as `d = { 'number': 1, 'char': 'a' }` can be accessed by `[]`: `d['number']`
 
 
+### Cool features in R
+
+## Many built-in objects and functions for stats
+```R
+# a quick sequence of number
+1:3 # 1, 2, 3. In Python, it has to be written as: list(range(1, 4))
+
+data.frame # construct data frame
+
+# the apply families!
+lapply, sapply, tapply, mapply, apply, aggregate, by, Map
+
+# a special function to call a function with a list of arguments
+do.call
+
+# explicit environment
+e = new.env()
+
+# formular syntax
+lm(x ~ y, data)
+```
+
+## [non-standard evaluation](http://adv-r.had.co.nz/Computing-on-the-language.html#nse)
+```R
+library(data.table)
+dt = data.table(a = 1:10)
+
+dt[a > 5] # no quotes needed, succinct. If using Python Pandas, it is: dt[dt['a'] > 4]
+
+with()
+transform()
+subbset()
+```
+
+
+### Cool features in Python
+
+## Slice syntax
+```Python
+n = list(range(4)) # [0, 1, 2, 3]
+n[2:] # [2, 3]
+n[:2] # [0, 1]
+```
+
+## arguments with * and **
+```Python
+a = [1, 2, 3]
+print(*a) # same as print(a[0], a[1], a[2])
+```
+
+## List and dict comprehension
+```Python
+n = list(range(4)) # [0, 1, 2, 3]
+[i ** 2 for i in n] # [0, 2, 4, 9]
+```
