@@ -7,6 +7,7 @@ A series of tutorials, codes, blurbs related to data sciences
 - [Gradient descent](./Gradient_descent.ipynb)
 - [Modelling variable intereaction](./Modelling_interaction.ipynb)
 - [Function approximation with neural network](./Function_approximation_with_NN.ipynb)
+- [Fashion Articles with Convolutional Neural Network](./Fashion_Articles_with_CNN.ipynb)
 
 ## Projects
 - [House price prediction](./House_price_prediction.ipynb)
